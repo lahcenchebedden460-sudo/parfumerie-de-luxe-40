@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parfumerie De Luxe 40</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="top-bar">
+        <p>Livraison dans toute l'Algérie</p>
+
+        <div class="socials">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </div>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <h1>40</h1>
+            <span>PARFUMERIE DE LUXE</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Boutique</a></li>
+            <li><a href="#">Parfums</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>L'ÉLÉGANCE À CHAQUE PULVÉRISATION</h2>
+
+        <p>
+            Des parfums d'exception pour des personnalités uniques.
+        </p>
+
+        <a href="#" class="btn">
+            Découvrir la Collection
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="feature">
+        <i class="fas fa-certificate"></i>
+        <h3>Parfums Originaux</h3>
+    </div>
+
+    <div class="feature">
+        <i class="fas fa-truck"></i>
+        <h3>Livraison Rapide</h3>
+    </div>
+
+    <div class="feature">
+        <i class="fas fa-wallet"></i>
+        <h3>Paiement à la Livraison</h3>
+    </div>
+
+    <div class="feature">
+        <i class="fas fa-star"></i>
+        <h3>Qualité Premium</h3>
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+    <h2>Découvrez Nos Univers</h2>
+
+    <div class="category-grid">
+
+        <div class="card">
+            <img src="images/homme.jpg" alt="">
+            <div class="overlay">
+                <h3>Parfums Homme</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/femme.jpg" alt="">
+            <div class="overlay">
+                <h3>Parfums Femme</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/unisex.jpg" alt="">
+            <div class="overlay">
+                <h3>Parfums Unisexes</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/bakhoor.jpg" alt="">
+            <div class="overlay">
+                <h3>Bakhoor & Encens</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROMO -->
+
+<section class="promo">
+
+    <div class="promo-content">
+
+        <h2>-30%</h2>
+
+        <p>
+            Offre spéciale sur une sélection de parfums.
+        </p>
+
+        <a href="#" class="btn">
+            Profiter Maintenant
+        </a>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products">
+
+    <h2>Nos Meilleures Ventes</h2>
+
+    <div class="product-grid">
+
+        <div class="product">
+            <img src="images/p1.png">
+            <h3>Bleu de Chanel</h3>
+            <span>16,800 DA</span>
+        </div>
+
+        <div class="product">
+            <img src="images/p2.png">
+            <h3>Sauvage Dior</h3>
+            <span>15,500 DA</span>
+        </div>
+
+        <div class="product">
+            <img src="images/p3.png">
+            <h3>Baccarat Rouge 540</h3>
+            <span>24,900 DA</span>
+        </div>
+
+        <div class="product">
+            <img src="images/p4.png">
+            <h3>Libre YSL</h3>
+            <span>15,900 DA</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <h2>Inscrivez-vous à notre Newsletter</h2>
+
+    <form>
+        <input type="email"
+        placeholder="Votre Email">
+
+        <button>
+            S'inscrire
+        </button>
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        <h2>40</h2>
+        <span>PARFUMERIE DE LUXE</span>
+    </div>
+
+    <p>
+        © 2026 Parfumerie De Luxe 40
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
