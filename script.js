@@ -1,221 +1,196 @@
-// ===============================
-// PARFUMERIE DE LUXE 40
-// ===============================
+// ==========================
+// Smooth Scroll
+// ==========================
 
-// Navbar Shadow On Scroll
+document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+    });
+});
 
-window.addEventListener("scroll", () => {
+// ==========================
+// Header Shadow On Scroll
+// ==========================
 
-    const navbar = document.querySelector(".navbar");
+window.addEventListener('scroll', () => {
+
+    const header = document.querySelector('header');
 
     if(window.scrollY > 50){
-
-        navbar.style.boxShadow =
-        "0 5px 20px rgba(0,0,0,0.25)";
-
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.25)";
     }else{
-
-        navbar.style.boxShadow = "none";
-
+        header.style.boxShadow = "none";
     }
 
 });
 
+// ==========================
+// Product Hover Animation
+// ==========================
 
-// Smooth Scroll
+const products = document.querySelectorAll('.product');
 
-document.querySelectorAll('a[href="#"]').forEach(link => {
+products.forEach(product => {
 
-    link.addEventListener("click", function(e){
+    product.addEventListener('mouseenter', () => {
+        product.style.transform = "translateY(-10px)";
+    });
 
-        e.preventDefault();
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
+    product.addEventListener('mouseleave', () => {
+        product.style.transform = "translateY(0)";
     });
 
 });
 
+// ==========================
+// Category Animation
+// ==========================
 
-// Product Animation
+const categories = document.querySelectorAll('.category-card');
 
-const products =
-document.querySelectorAll(".product");
+categories.forEach(card => {
 
-const observer =
-new IntersectionObserver(entries => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = "translateY(-5px)";
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = "translateY(0)";
+    });
+
+});
+
+// ==========================
+// Newsletter Validation
+// ==========================
+
+const form = document.querySelector('.newsletter form');
+
+if(form){
+
+    form.addEventListener('submit', function(e){
+
+        e.preventDefault();
+
+        const email =
+        document.querySelector('.newsletter input');
+
+        if(email.value.trim() === ""){
+
+            alert("Veuillez entrer votre email");
+
+            return;
+        }
+
+        const regex =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!regex.test(email.value)){
+
+            alert("Adresse email invalide");
+
+            return;
+        }
+
+        alert("Merci pour votre inscription !");
+
+        email.value = "";
+
+    });
+
+}
+
+// ==========================
+// Fade In Animation
+// ==========================
+
+const observer = new IntersectionObserver(entries => {
 
     entries.forEach(entry => {
 
         if(entry.isIntersecting){
 
             entry.target.style.opacity = "1";
-            entry.target.style.transform =
-            "translateY(0)";
+            entry.target.style.transform = "translateY(0)";
 
         }
 
     });
 
 },{
-    threshold:0.2
+    threshold:0.15
 });
 
-products.forEach(product => {
+const animatedElements = document.querySelectorAll(
+'.feature, .category-card, .product, .offer-left, .offer-right'
+);
 
-    product.style.opacity = "0";
-    product.style.transform =
-    "translateY(50px)";
-    product.style.transition =
-    "all .8s ease";
+animatedElements.forEach(el => {
 
-    observer.observe(product);
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    el.style.transition = "all .8s ease";
+
+    observer.observe(el);
 
 });
 
+// ==========================
+// WhatsApp Button Effect
+// ==========================
 
-// Category Animation
+const whatsapp =
+document.querySelector('.whatsapp');
 
-const cards =
-document.querySelectorAll(".card");
+if(whatsapp){
 
-cards.forEach(card => {
+    setInterval(() => {
 
-    card.addEventListener("mouseenter", () => {
+        whatsapp.animate([
+            {transform:'scale(1)'},
+            {transform:'scale(1.15)'},
+            {transform:'scale(1)'}
+        ],{
+            duration:1000
+        });
 
-        card.style.transform =
-        "translateY(-10px)";
+    },3000);
+
+}
+
+// ==========================
+// Hero Button Effect
+// ==========================
+
+const heroBtn =
+document.querySelector('.btn');
+
+if(heroBtn){
+
+    heroBtn.addEventListener('mouseenter', () => {
+
+        heroBtn.style.transform = "scale(1.05)";
 
     });
 
-    card.addEventListener("mouseleave", () => {
+    heroBtn.addEventListener('mouseleave', () => {
 
-        card.style.transform =
-        "translateY(0px)";
-
-    });
-
-});
-
-
-// Newsletter Form
-
-const form =
-document.querySelector(".newsletter form");
-
-if(form){
-
-    form.addEventListener("submit",(e)=>{
-
-        e.preventDefault();
-
-        const email =
-        form.querySelector("input").value;
-
-        if(email === ""){
-
-            alert("Veuillez saisir votre email");
-
-            return;
-        }
-
-        alert(
-        "Merci pour votre inscription !"
-        );
-
-        form.reset();
+        heroBtn.style.transform = "scale(1)";
 
     });
 
 }
 
+// ==========================
+// Current Year Footer
+// ==========================
 
-// Hero Text Animation
+const footer =
+document.querySelector('.footer-bottom p');
 
-window.addEventListener("load",()=>{
+if(footer){
 
-    const heroTitle =
-    document.querySelector(".hero h2");
+    footer.innerHTML =
+    `© ${new Date().getFullYear()} Parfumerie De Luxe 40 - Tous droits réservés.`;
 
-    const heroText =
-    document.querySelector(".hero p");
-
-    const heroBtn =
-    document.querySelector(".hero .btn");
-
-    heroTitle.style.opacity = "0";
-    heroText.style.opacity = "0";
-    heroBtn.style.opacity = "0";
-
-    heroTitle.style.transform =
-    "translateY(40px)";
-
-    heroText.style.transform =
-    "translateY(40px)";
-
-    heroBtn.style.transform =
-    "translateY(40px)";
-
-    heroTitle.style.transition =
-    "all 1s ease";
-
-    heroText.style.transition =
-    "all 1.2s ease";
-
-    heroBtn.style.transition =
-    "all 1.4s ease";
-
-    setTimeout(()=>{
-
-        heroTitle.style.opacity = "1";
-        heroTitle.style.transform =
-        "translateY(0)";
-
-    },200);
-
-    setTimeout(()=>{
-
-        heroText.style.opacity = "1";
-        heroText.style.transform =
-        "translateY(0)";
-
-    },500);
-
-    setTimeout(()=>{
-
-        heroBtn.style.opacity = "1";
-        heroBtn.style.transform =
-        "translateY(0)";
-
-    },800);
-
-});
-
-
-// Counter Cart Example
-
-let cartCount = 0;
-
-const bagIcon =
-document.querySelector(".fa-shopping-bag");
-
-if(bagIcon){
-
-    bagIcon.addEventListener("click",()=>{
-
-        cartCount++;
-
-        bagIcon.setAttribute(
-        "data-count",
-        cartCount
-        );
-
-        console.log(
-        "Produits dans le panier :",
-        cartCount
-        );
-
-    });
+}
